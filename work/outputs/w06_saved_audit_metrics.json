@@ -1,0 +1,299 @@
+{
+  "evidence_type": "saved_executed_w06_outputs_not_a_new_model_run",
+  "source_notebook": "work/notebooks/w06_validation_audit.ipynb",
+  "source_notebook_sha256": "668116c85bf56464ef4b1ff68fecc4de1c21487b0a57a445020466f0d2b99a8c",
+  "inspected_source_commit": "25123467d04addc46ca4f20ed44e2ef6050429fb",
+  "source_execution_date": "2026-11-21",
+  "display_precision_decimal_places": 4,
+  "cohort_pages": 75526,
+  "cohort_clients": 37,
+  "dataset_revision": "50cbf7c3909d07be4d1b5906b4d09e882e5acbf2",
+  "partition_sha256": "6ebd367f05932238df05b193f9cfb9cc7839d7856b65ef74b5a122d5fadef589",
+  "feature_window": [
+    "2026-03-01",
+    "2026-03-14"
+  ],
+  "proxy_window": [
+    "2026-03-15",
+    "2026-03-28"
+  ],
+  "fold_results": [
+    {
+      "Fold": 1,
+      "Method": "Week-4 baseline rule",
+      "Train clients": 36,
+      "Test clients": 1,
+      "Precision@20": 0.7,
+      "Precision@50": 0.78,
+      "Average precision": 0.3576,
+      "ROC-AUC": 0.5028,
+      "Test base rate": 0.3546,
+      "Test pages": 17280
+    },
+    {
+      "Fold": 1,
+      "Method": "Logistic Regression",
+      "Train clients": 36,
+      "Test clients": 1,
+      "Precision@20": 0.2,
+      "Precision@50": 0.16,
+      "Average precision": 0.3285,
+      "ROC-AUC": 0.4825,
+      "Test base rate": 0.3546,
+      "Test pages": 17280
+    },
+    {
+      "Fold": 1,
+      "Method": "Random Forest",
+      "Train clients": 36,
+      "Test clients": 1,
+      "Precision@20": 0.55,
+      "Precision@50": 0.52,
+      "Average precision": 0.416,
+      "ROC-AUC": 0.5978,
+      "Test base rate": 0.3546,
+      "Test pages": 17280
+    },
+    {
+      "Fold": 1,
+      "Method": "Inner-selected model",
+      "Train clients": 36,
+      "Test clients": 1,
+      "Precision@20": 0.55,
+      "Precision@50": 0.52,
+      "Average precision": 0.416,
+      "ROC-AUC": 0.5978,
+      "Test base rate": 0.3546,
+      "Test pages": 17280
+    },
+    {
+      "Fold": 2,
+      "Method": "Week-4 baseline rule",
+      "Train clients": 29,
+      "Test clients": 8,
+      "Precision@20": 0.7,
+      "Precision@50": 0.64,
+      "Average precision": 0.4418,
+      "ROC-AUC": 0.5013,
+      "Test base rate": 0.4407,
+      "Test pages": 14542
+    },
+    {
+      "Fold": 2,
+      "Method": "Logistic Regression",
+      "Train clients": 29,
+      "Test clients": 8,
+      "Precision@20": 0.1,
+      "Precision@50": 0.1,
+      "Average precision": 0.4402,
+      "ROC-AUC": 0.5148,
+      "Test base rate": 0.4407,
+      "Test pages": 14542
+    },
+    {
+      "Fold": 2,
+      "Method": "Random Forest",
+      "Train clients": 29,
+      "Test clients": 8,
+      "Precision@20": 1.0,
+      "Precision@50": 0.74,
+      "Average precision": 0.5155,
+      "ROC-AUC": 0.5893,
+      "Test base rate": 0.4407,
+      "Test pages": 14542
+    },
+    {
+      "Fold": 2,
+      "Method": "Inner-selected model",
+      "Train clients": 29,
+      "Test clients": 8,
+      "Precision@20": 1.0,
+      "Precision@50": 0.74,
+      "Average precision": 0.5155,
+      "ROC-AUC": 0.5893,
+      "Test base rate": 0.4407,
+      "Test pages": 14542
+    },
+    {
+      "Fold": 3,
+      "Method": "Week-4 baseline rule",
+      "Train clients": 31,
+      "Test clients": 6,
+      "Precision@20": 0.3,
+      "Precision@50": 0.42,
+      "Average precision": 0.4452,
+      "ROC-AUC": 0.5,
+      "Test base rate": 0.4446,
+      "Test pages": 14606
+    },
+    {
+      "Fold": 3,
+      "Method": "Logistic Regression",
+      "Train clients": 31,
+      "Test clients": 6,
+      "Precision@20": 0.3,
+      "Precision@50": 0.46,
+      "Average precision": 0.3892,
+      "ROC-AUC": 0.4148,
+      "Test base rate": 0.4446,
+      "Test pages": 14606
+    },
+    {
+      "Fold": 3,
+      "Method": "Random Forest",
+      "Train clients": 31,
+      "Test clients": 6,
+      "Precision@20": 0.65,
+      "Precision@50": 0.46,
+      "Average precision": 0.5517,
+      "ROC-AUC": 0.5947,
+      "Test base rate": 0.4446,
+      "Test pages": 14606
+    },
+    {
+      "Fold": 3,
+      "Method": "Inner-selected model",
+      "Train clients": 31,
+      "Test clients": 6,
+      "Precision@20": 0.65,
+      "Precision@50": 0.46,
+      "Average precision": 0.5517,
+      "ROC-AUC": 0.5947,
+      "Test base rate": 0.4446,
+      "Test pages": 14606
+    },
+    {
+      "Fold": 4,
+      "Method": "Week-4 baseline rule",
+      "Train clients": 30,
+      "Test clients": 7,
+      "Precision@20": 0.45,
+      "Precision@50": 0.44,
+      "Average precision": 0.2296,
+      "ROC-AUC": 0.5126,
+      "Test base rate": 0.2202,
+      "Test pages": 14557
+    },
+    {
+      "Fold": 4,
+      "Method": "Logistic Regression",
+      "Train clients": 30,
+      "Test clients": 7,
+      "Precision@20": 0.35,
+      "Precision@50": 0.42,
+      "Average precision": 0.3694,
+      "ROC-AUC": 0.6851,
+      "Test base rate": 0.2202,
+      "Test pages": 14557
+    },
+    {
+      "Fold": 4,
+      "Method": "Random Forest",
+      "Train clients": 30,
+      "Test clients": 7,
+      "Precision@20": 0.6,
+      "Precision@50": 0.6,
+      "Average precision": 0.2846,
+      "ROC-AUC": 0.5816,
+      "Test base rate": 0.2202,
+      "Test pages": 14557
+    },
+    {
+      "Fold": 4,
+      "Method": "Inner-selected model",
+      "Train clients": 30,
+      "Test clients": 7,
+      "Precision@20": 0.6,
+      "Precision@50": 0.6,
+      "Average precision": 0.2846,
+      "ROC-AUC": 0.5816,
+      "Test base rate": 0.2202,
+      "Test pages": 14557
+    },
+    {
+      "Fold": 5,
+      "Method": "Week-4 baseline rule",
+      "Train clients": 22,
+      "Test clients": 15,
+      "Precision@20": 0.4,
+      "Precision@50": 0.24,
+      "Average precision": 0.2263,
+      "ROC-AUC": 0.5,
+      "Test base rate": 0.2259,
+      "Test pages": 14541
+    },
+    {
+      "Fold": 5,
+      "Method": "Logistic Regression",
+      "Train clients": 22,
+      "Test clients": 15,
+      "Precision@20": 0.6,
+      "Precision@50": 0.36,
+      "Average precision": 0.2543,
+      "ROC-AUC": 0.5042,
+      "Test base rate": 0.2259,
+      "Test pages": 14541
+    },
+    {
+      "Fold": 5,
+      "Method": "Random Forest",
+      "Train clients": 22,
+      "Test clients": 15,
+      "Precision@20": 0.3,
+      "Precision@50": 0.4,
+      "Average precision": 0.2625,
+      "ROC-AUC": 0.5406,
+      "Test base rate": 0.2259,
+      "Test pages": 14541
+    },
+    {
+      "Fold": 5,
+      "Method": "Inner-selected model",
+      "Train clients": 22,
+      "Test clients": 15,
+      "Precision@20": 0.3,
+      "Precision@50": 0.4,
+      "Average precision": 0.2625,
+      "ROC-AUC": 0.5406,
+      "Test base rate": 0.2259,
+      "Test pages": 14541
+    }
+  ],
+  "inner_selection": [
+    {
+      "Outer fold": 1,
+      "Selected model": "Random Forest",
+      "Logistic Regression inner P@50": 0.3133,
+      "Random Forest inner P@50": 0.5533
+    },
+    {
+      "Outer fold": 2,
+      "Selected model": "Random Forest",
+      "Logistic Regression inner P@50": 0.3467,
+      "Random Forest inner P@50": 0.4933
+    },
+    {
+      "Outer fold": 3,
+      "Selected model": "Random Forest",
+      "Logistic Regression inner P@50": 0.4533,
+      "Random Forest inner P@50": 0.66
+    },
+    {
+      "Outer fold": 4,
+      "Selected model": "Random Forest",
+      "Logistic Regression inner P@50": 0.3267,
+      "Random Forest inner P@50": 0.4467
+    },
+    {
+      "Outer fold": 5,
+      "Selected model": "Random Forest",
+      "Logistic Regression inner P@50": 0.28,
+      "Random Forest inner P@50": 0.52
+    }
+  ],
+  "limits": [
+    "Retrospective March development audit",
+    "Folds are not independent trials",
+    "No calibrated probabilities, refresh treatment effect, or editorial usefulness labels"
+  ]
+}

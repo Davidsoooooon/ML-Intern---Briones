@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "status": "pending_approved_data_run",
+  "generated_at_utc": "2026-11-21T04:32:52+00:00",
+  "evidence_label": "saved Week-6 execution; no new data run",
+  "config": {
+    "pipeline_version": "w07-action-playbook-v1",
+    "seed": 42,
+    "outer_folds": 5,
+    "inner_folds": 3,
+    "queue_size_per_fold": 50,
+    "dataset": "FlyRank/internship-warehouse",
+    "revision": "50cbf7c3909d07be4d1b5906b4d09e882e5acbf2",
+    "partition": "fact_content_daily_performance/month=2026-03/data_0.parquet",
+    "partition_sha256": "6ebd367f05932238df05b193f9cfb9cc7839d7856b65ef74b5a122d5fadef589",
+    "feature_start": "2026-03-01",
+    "feature_end": "2026-03-14",
+    "decision_date": "2026-03-15",
+    "label_end": "2026-03-28",
+    "min_early_impressions": 100,
+    "decline_ratio": 0.8,
+    "review_minutes_assumed": 15
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "sklearn": "1.8.0",
+    "duckdb": "2.0.1"
+  },
+  "source_audit_notebook_sha256": "668116c85bf56464ef4b1ff68fecc4de1c21487b0a57a445020466f0d2b99a8c",
+  "queue_rows_generated_this_run": 0,
+  "queue_scope": "five separate 50-page outer-fold queues; no pooled global top-50 claim",
+  "current_fold_metrics": null,
+  "historical_receipt": "work/outputs/w06_saved_audit_metrics.json",
+  "inner_selection_current_run": null,
+  "reason_code_dictionary": {
+    "MODEL_TOP50": "Within the audited model's 50-page queue for this outer fold.",
+    "EARLY_COVERAGE_GAP": "Fewer than 14 observed fact days in the early window.",
+    "MISSING_POSITION": "Early average position is missing; zero positions were treated as missing.",
+    "MISSING_VOLATILITY": "Early position volatility is missing.",
+    "LOW_ACTIVE_DAYS": "Fewer than 7 early days with positive impressions.",
+    "HIGH_EARLY_IMPRESSIONS": "At or above outer-training-fold 75th percentile of early impressions.",
+    "HIGH_POSITION_VOLATILITY": "At or above outer-training-fold 75th percentile of early volatility.",
+    "DEEP_AVERAGE_POSITION": "Early average position is greater than 20.",
+    "NO_SPECIFIC_DIAGNOSIS": "No more specific policy condition was established."
+  },
+  "cost_scenario": {
+    "minutes_per_review_assumed": 15,
+    "hours_per_50_reviews_assumed": 12.5,
+    "measured_editorial_value": null,
+    "measured_revenue_uplift": null
+  },
+  "review_rules": {
+    "default_status": "pending_human_review",
+    "human_roles": [
+      "analyst: evidence quality",
+      "editor: content diagnosis",
+      "content owner: approve action",
+      "publishing owner: authorize change"
+    ],
+    "allowed_automation": [
+      "local checks",
+      "draft queue",
+      "reason codes",
+      "aggregate figures",
+      "file exports"
+    ],
+    "automatic_content_changes_allowed": false,
+    "automatic_retraining_or_model_replacement_allowed": false,
+    "review_decisions": [
+      "approve_for_separate_owner_review",
+      "defer",
+      "reject",
+      "request_more_evidence"
+    ]
+  },
+  "monitoring_plan": [
+    {
+      "Monitor": "Schema / grain",
+      "Cadence": "Before every run",
+      "Proposed trigger": "Any missing required column, duplicate page-day key, invalid count, or source mismatch",
+      "Human response": "Stop; repair or revalidate the source",
+      "Owner role": "Analyst"
+    },
+    {
+      "Monitor": "Coverage",
+      "Cadence": "Before every queue",
+      "Proposed trigger": "Any queued page has <14 observed early days or missing position/volatility",
+      "Human response": "Hold affected content changes; verify measurement",
+      "Owner role": "Analyst"
+    },
+    {
+      "Monitor": "Freshness / scope",
+      "Cadence": "Before operational use",
+      "Proposed trigger": "Any new month/client population, or a queue more than 14 days past its feature cutoff",
+      "Human response": "Treat as out of scope or stale; gather fresh validation",
+      "Owner role": "Analyst + owner"
+    },
+    {
+      "Monitor": "Feature shift",
+      "Cadence": "Each new eligible cohort",
+      "Proposed trigger": "Missingness rises >5 percentage points, or median early impressions/position changes >25% versus March",
+      "Human response": "Investigate source, client mix, and seasonality; do not retrain automatically",
+      "Owner role": "Analyst"
+    },
+    {
+      "Monitor": "Proxy performance",
+      "Cadence": "After two complete non-overlapping outcome windows",
+      "Proposed trigger": "P@50 falls below 0.40 OR does not exceed the same-window rule in both windows (>=50 reviewed ranks each)",
+      "Human response": "Pause model-led prioritization; compare baseline and diagnose; propose fresh validation",
+      "Owner role": "Analyst + owner"
+    },
+    {
+      "Monitor": "Human usefulness / cost",
+      "Cadence": "After every reviewed batch",
+      "Proposed trigger": "Acceptance below 50% or median triage time above 20 minutes in two consecutive batches of >=20 reviews",
+      "Human response": "Revisit policy and workload; measure accepted actions separately from proxy positives",
+      "Owner role": "Editor"
+    },
+    {
+      "Monitor": "Retrain decision",
+      "Cadence": "Only after diagnosis and owner approval",
+      "Proposed trigger": "A sustained distribution/performance shift remains after data issues are resolved",
+      "Human response": "Re-fit on approved data; test against baseline on new time/client splits; retain prior version",
+      "Owner role": "Model owner"
+    }
+  ],
+  "monitoring_baseline": null,
+  "action_counts": null,
+  "decay_refresh_conclusion": "Short-window impression decline observed; age decay and causal refresh benefit unmeasured.",
+  "artifacts": {
+    "saved_audit_receipt": {
+      "path": "work/outputs/w06_saved_audit_metrics.json",
+      "sha256": "1eebcc5a43d853972affc2d96022df8e13de93b79af8dae8b7d24e048171fd11"
+    },
+    "precision_figure": {
+      "path": "work/figures/w07_validation_precision.svg",
+      "sha256": "19e7769af6e3b21b0d3b808182d76bc3f55d9b54a4f4ebcb62cb95664f3f17c3"
+    }
+  }
+}
